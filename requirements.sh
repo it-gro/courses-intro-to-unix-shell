@@ -5,9 +5,6 @@ USER_GROUP=repl:repl
 COURSE_ID=course_5065
 FILESYS=filesys.zip
 SOLUTIONS=solutions.zip
-PYTHON=python3
-PIP=pip3
-SHELLWHAT_EXT=git+https://github.com/datacamp/shellwhat_ext.git@v0.2.0
 
 # Report start.
 echo ''
@@ -31,10 +28,6 @@ apt-get update
 apt-get -y install nano
 apt-get -y install unzip
 
-# Install the shellwhat_ext extensions.
-${PIP} install ${SHELLWHAT_EXT} --no-deps
-${PYTHON} -c "import sys; print('sys.version:', sys.version)"
-${PYTHON} -c "import shellwhat_ext; print('shellwhat_ext version:', shellwhat_ext.__version__)"
 
 # Unpack to the local directory.
 unzip ./${FILESYS}
